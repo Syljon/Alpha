@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class WorkerFormComponent implements OnInit {
   firstName: string;
   lastName: string;
+  nationality: string;
+  nationalities = ["English","Spanish","Polish","German"];
   constructor() { }
 
   ngOnInit() {

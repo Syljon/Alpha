@@ -12,7 +12,7 @@ export class WorkersService {
       date: "12-06-2014",
       phoneNumber: "123123123",
       pesel: "11111111111",
-      language: "English",
+      nationality: "English",
       isFullTime: true
     },
     {
@@ -22,7 +22,7 @@ export class WorkersService {
       date: "10-06-2014",
       phoneNumber: "111222333",
       pesel: "11111124111",
-      language: "Polish",
+      nationality: "Polish",
       isFullTime: false
     },
     {
@@ -32,7 +32,7 @@ export class WorkersService {
       date: "06-06-2014",
       phoneNumber: "999666555",
       pesel: "11223345678",
-      language: "Spanish",
+      nationality: "Spanish",
       isFullTime: true
     },
   ];
