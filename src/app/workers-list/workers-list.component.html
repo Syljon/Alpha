@@ -1,0 +1,22 @@
+<div class='container'>
+    <table class="table">
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone Number</th>
+      <tr *ngFor="let worker of workerslist">
+        <td>
+          {{ worker.workerId}}
+        </td>
+        <td>
+          {{ worker.firstName }}
+        </td>
+        <td>
+          {{ worker.lastName }}
+        </td>
+        <td>
+          {{ worker.phoneNumber }}
+        </td>
+      </tr>
+    </table>
+  </div>

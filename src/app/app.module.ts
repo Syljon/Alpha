@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { WorkersListComponent } from './workers-list/workers-list.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WorkersListComponent
   ],
   imports: [
     BrowserModule,
