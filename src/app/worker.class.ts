@@ -6,5 +6,5 @@ export class Worker {
   phoneNumber?: string;
   pesel?: string;
   nationality: string;
-  isFullTime: boolean;
+  isFullTime?: boolean;
 }

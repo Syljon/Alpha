@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Worker } from '../worker.class';
+import { WorkersService } from '../workers.service';
 
 @Component({
   selector: 'app-worker-form',
@@ -6,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./worker-form.component.css']
 })
 export class WorkerFormComponent implements OnInit {
-  firstName: string;
-  lastName: string;
-  nationality: string;
-  nationalities = ["English","Spanish","Polish","German"];
-  constructor() { }
+  submited: boolean = false;
+  model: Worker = { firstName: "", lastName: "", nationality:""};
+  nationalities = ["English","Spanish","Polish","German","Other"];
 
+  Submit(){
+    this.workersService.addWorkers(this.model);
+    this.submited = true;
+  }
+  constructor(private workersService:WorkersService) { }
+  
   ngOnInit() {
   }
 

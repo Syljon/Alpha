@@ -1,8 +1,8 @@
 <div class="container">
-  <form #form="ngForm">
+  <form #form="ngForm" *ngIf="!submited">
     <div class="form-group">
       <label>First Name </label>
-      <input #fname="ngModel" required class="form-control" type="text" name="FirstName" [(ngModel)]="firstName">
+      <input #fname="ngModel" required class="form-control" type="text" name="FirstName" [(ngModel)]="model.firstName">
     </div>
     <div *ngIf="fname.touched && fname.invalid">
       <ngb-alert type="danger" [dismissible]="false">
@@ -12,7 +12,7 @@
 
     <div class="form-group">
       <label>Last Name </label>
-      <input #lname="ngModel" required class="form-control" type="text" name="LastName" [(ngModel)]="lastName">
+      <input #lname="ngModel" required class="form-control" type="text" name="LastName" [(ngModel)]="model.lastName">
     </div>
     <div *ngIf="lname.touched && lname.invalid">
       <ngb-alert type="danger" [dismissible]="false">
@@ -21,7 +21,7 @@
     </div>
 
     <label>Nationality</label>
-    <select #nation="ngModel" required class="form-control" name="Nationality" [(ngModel)]="nationality">
+    <select #nation="ngModel" required class="form-control" name="Nationality" [(ngModel)]="model.nationality">
       <option *ngFor="let nat of nationalities">{{ nat }}</option>
     </select>
     <div *ngIf="nation.touched && nation.invalid">
@@ -29,9 +29,12 @@
         <strong>Warning!</strong> Somthing wrong
       </ngb-alert>
     </div>
+    <br>
+    <h4>Form {{ form.valid }}</h4>
+    <br>
+    <button class="btn btn-success" [disabled]="!form.valid" (click)="Submit()">Submit</button>
   </form>
-  <h6>FN {{fname.valid}}</h6>
-  <h6>LN {{lname.valid}}</h6>
-  <h6>NAT {{nation.valid}}</h6>
-
+  <div class="jumbotron" *ngIf="submited">
+    <h1 class="display-4">Form submited!</h1>
+  </div>
 </div>

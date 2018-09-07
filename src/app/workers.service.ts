@@ -36,7 +36,10 @@ export class WorkersService {
       isFullTime: true
     },
   ];
-
+  addWorkers(workerToPush: Worker){
+    this.workers.push(workerToPush);
+    console.log(this.workers);
+  }
   getWorkers(){
     return this.workers;
   }
