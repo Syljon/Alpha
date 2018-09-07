@@ -1,8 +1,10 @@
 export class Worker {
-  workerId: number;
+  workerId?: number;
   firstName: string;
   lastName: string;
-  date: string;
-  phoneNumber: string;
-  pesel: string;
+  date?: string;
+  phoneNumber?: string;
+  pesel?: string;
+  language: string;
+  isFullTime: boolean;
 }

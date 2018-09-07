@@ -1,0 +1,26 @@
+<div class="container">
+  <form #form="ngForm">
+    <div class="form-group">
+      <label>First Name </label>
+      <input #fname="ngModel" required class="form-control" type="text" name="FirstName" [(ngModel)]="firstName">
+    </div>
+    <div *ngIf="fname.touched && fname.invalid">
+      <ngb-alert type="danger" [dismissible]="false">
+        <strong>Warning!</strong> Somthing wrong
+      </ngb-alert>
+    </div>
+    
+    <div class="form-group">
+      <label>Last Name </label>
+      <input #lname="ngModel" required class="form-control" type="text" name="LastName" [(ngModel)]="lastName">
+    </div>
+    <div *ngIf="lname.touched && lname.invalid">
+      <ngb-alert type="danger" [dismissible]="false">
+        <strong>Warning!</strong> Somthing wrong
+      </ngb-alert>
+    </div>
+  </form>
+  <h6>FN {{fname.valid}}</h6>
+  <h6>LN {{lname.valid}}</h6>
+
+</div>

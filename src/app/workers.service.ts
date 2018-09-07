@@ -11,7 +11,9 @@ export class WorkersService {
       lastName: "Kowalski",
       date: "12-06-2014",
       phoneNumber: "123123123",
-      pesel: "11111111111"
+      pesel: "11111111111",
+      language: "English",
+      isFullTime: true
     },
     {
       workerId: 3,
@@ -19,7 +21,9 @@ export class WorkersService {
       lastName: "Wycik",
       date: "10-06-2014",
       phoneNumber: "111222333",
-      pesel: "11111124111"
+      pesel: "11111124111",
+      language: "Polish",
+      isFullTime: false
     },
     {
       workerId: 10,
@@ -27,7 +31,9 @@ export class WorkersService {
       lastName: "Roman",
       date: "06-06-2014",
       phoneNumber: "999666555",
-      pesel: "11223345678"
+      pesel: "11223345678",
+      language: "Spanish",
+      isFullTime: true
     },
   ];
 
