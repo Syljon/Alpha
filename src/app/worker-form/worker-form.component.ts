@@ -12,22 +12,13 @@ export class WorkerFormComponent implements OnInit {
   model: Worker = { firstName: "", lastName: "", nationality:""};
   nationalities = ["English","Spanish","Polish","German","Other"];
 
-  onSubmit(){
-    console.log("Submit", this.model)
+  Submit(){
     this.workersService.addWorkers(this.model);
     this.submited = true;
   }
-  addAnother(){
-    this.submited = false;
-    this.model = { firstName: "", lastName: "", nationality:""};
-  }
-  constructor(private workersService:WorkersService) { 
-    console.log("constructor");
-    
-  }
+  constructor(private workersService:WorkersService) { }
   
   ngOnInit() {
-    console.log("ngOnInit");
   }
 
 }

@@ -1,5 +1,5 @@
 <div class="container">
-  <form id="workerForm" #form="ngForm" [hidden]="submited">
+  <form #form="ngForm" *ngIf="!submited">
     <div class="form-group">
       <label>First Name </label>
       <input #fname="ngModel" required class="form-control" type="text" name="FirstName" [(ngModel)]="model.firstName">
@@ -30,12 +30,11 @@
       </ngb-alert>
     </div>
     <br>
-    <button (click)="onSubmit()" class="btn btn-success" [disabled]="!form.valid">Submit</button>
+    <button class="btn btn-success" [disabled]="!form.valid" (click)="Submit()">Submit</button>
     <br>
+    <h4>Form {{ form.valid }}</h4>
   </form>
-  <div class="jumbotron" [hidden]="!submited">
+  <div class="jumbotron" *ngIf="submited">
     <h1 class="display-4">Form submited!</h1>
-    <button (click)="addAnother(); form.resetForm()">Add another</button>
   </div>
-  <h4>Form {{ form.valid }}</h4>
 </div>
