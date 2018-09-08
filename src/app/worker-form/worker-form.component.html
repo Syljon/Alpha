@@ -30,9 +30,9 @@
       </ngb-alert>
     </div>
     <br>
-    <h4>Form {{ form.valid }}</h4>
-    <br>
     <button class="btn btn-success" [disabled]="!form.valid" (click)="Submit()">Submit</button>
+    <br>
+    <h4>Form {{ form.valid }}</h4>
   </form>
   <div class="jumbotron" *ngIf="submited">
     <h1 class="display-4">Form submited!</h1>
