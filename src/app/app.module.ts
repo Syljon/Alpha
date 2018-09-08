@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WorkersListComponent } from './workers-list/workers-list.component';
 import { WorkerFormComponent } from './worker-form/worker-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { WorkerDetailComponent } from './worker-detail/worker-detail.component';
 
 
 @NgModule({
@@ -15,15 +16,19 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     AppComponent,
     WorkersListComponent,
     WorkerFormComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    WorkerDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot([{path:'welcome', component: WelcomePageComponent},
+    RouterModule.forRoot([
+      {path:'welcome', component: WelcomePageComponent},
       {path:'employee-list', component: WorkersListComponent},
-      {path: 'employee-form', component: WorkerFormComponent}
+      {path: 'employee-form', component: WorkerFormComponent},
+      {path: 'detail/:id', component: WorkerDetailComponent},
+      {path:'**',redirectTo:"/welcome",pathMatch: 'full'}
     ])
   ],
   providers: [],

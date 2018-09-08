@@ -1,0 +1,15 @@
+<div class='container' *ngIf='employee'>
+
+<h2>Name: {{employee.firstName}}  {{employee.lastName}}</h2>
+
+<h5>Employee ID: {{employee.workerId}}</h5>
+<p>
+Hire Date: {{employee.date}}<br>
+Phone number: {{employee.phoneNumber}}<br>
+Social security number: {{employee.pesel}}<br>
+Nationality: {{employee.nationality}}<br>
+Status: {{employee.isFullTime ? "Full time" : "Part time"}}
+</p>
+
+<button (click)="goBack()">go back</button>
+</div>

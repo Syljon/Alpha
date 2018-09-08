@@ -16,7 +16,7 @@ export class WorkersService {
       isFullTime: true
     },
     {
-      workerId: 3,
+      workerId: 2,
       firstName: "Tomasz",
       lastName: "Wycik",
       date: "10-06-2014",
@@ -26,7 +26,7 @@ export class WorkersService {
       isFullTime: false
     },
     {
-      workerId: 10,
+      workerId: 3,
       firstName: "Rober",
       lastName: "Roman",
       date: "06-06-2014",
@@ -40,8 +40,14 @@ export class WorkersService {
     this.workers.push(workerToPush);
     console.log(this.workers);
   }
+  getWorkersLength(){
+    return this.workers.length
+  }
   getWorkers(){
     return this.workers;
+  }
+  getWorker(id: number){
+    return this.workers.find(worker => worker.workerId === id);
   }
   constructor() { }
 }

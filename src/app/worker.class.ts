@@ -1,5 +1,5 @@
 export class Worker {
-  workerId?: number;
+  workerId: number;
   firstName: string;
   lastName: string;
   date?: string;
