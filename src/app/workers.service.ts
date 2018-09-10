@@ -9,31 +9,31 @@ export class WorkersService {
       workerId: 1,
       firstName: "Adam",
       lastName: "Kowalski",
-      date: "12-06-2014",
+      hireDate: {year: 2018, month: 9, day: 21},
       phoneNumber: "123123123",
       pesel: "11111111111",
       nationality: "English",
-      isFullTime: true
+      isFullTime: "1/4"
     },
     {
       workerId: 2,
       firstName: "Tomasz",
       lastName: "Wycik",
-      date: "10-06-2014",
+      hireDate: { year: 2018, month: 12, day: 24 },
       phoneNumber: "111222333",
       pesel: "11111124111",
       nationality: "Polish",
-      isFullTime: false
+      isFullTime: "Full"
     },
     {
       workerId: 3,
       firstName: "Rober",
       lastName: "Roman",
-      date: "06-06-2014",
+      hireDate: { year: 2022, month: 10, day: 10 },
       phoneNumber: "999666555",
       pesel: "11223345678",
       nationality: "Spanish",
-      isFullTime: true
+      isFullTime: "1/2"
     },
   ];
   addWorkers(workerToPush: Worker){

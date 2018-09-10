@@ -24,5 +24,7 @@ export class WorkerDetailComponent implements OnInit {
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get("id");
     this.employee = this.workersService.getWorker(id);
+    console.log("GET", this.employee);
+    console.log(this.employee.hireDate);
   }
 }

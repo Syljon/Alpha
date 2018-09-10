@@ -4,11 +4,12 @@
 
 <h5>Employee ID: {{employee.workerId}}</h5>
 <p>
-Hire Date: {{employee.date}}<br>
+Hire Date: {{employee.hireDate.day}}-{{employee.hireDate.month}}-{{employee.hireDate.year}}<br>
 Phone number: {{employee.phoneNumber}}<br>
 Social security number: {{employee.pesel}}<br>
 Nationality: {{employee.nationality}}<br>
-Status: {{employee.isFullTime ? "Full time" : "Part time"}}
+Work Time: {{employee.isFullTime}}
+
 </p>
 
 <button (click)="goBack()">go back</button>

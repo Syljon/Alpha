@@ -19,9 +19,37 @@
         <strong>Warning!</strong> Somthing wrong
       </ngb-alert>
     </div>
+
     <div class="form-group">
-        <label>Hire Date </label>
-        <input type="text" (click)="date.toggle()" ngbDatepicker #date="ngbDatepicker" name="HireDate" [(ngModel)]="model.date"/>
+      <label>Hire Date </label>
+      <input #hdate="ngModel" required type="text" class="form-control" placeholder="yyyy-mm-dd" (click)="date.toggle()"
+        ngbDatepicker #date="ngbDatepicker" name="HireDate" [(ngModel)]="model.hireDate" />
+    </div>
+    <div *ngIf="hdate.touched && hdate.invalid">
+      <ngb-alert type="danger" [dismissible]="false">
+        <strong>Warning!</strong> Somthing wrong
+      </ngb-alert>
+    </div>
+
+    <div class="form-group">
+      <label>Phone number</label>
+      <input #pnumber="ngModel" required pattern="[0-9]{9}" type="text" class="form-control" name="PhoneNumber"
+        [(ngModel)]="model.phoneNumber" />
+    </div>
+    <div *ngIf="pnumber.touched && pnumber.invalid">
+      <ngb-alert type="danger" [dismissible]="false">
+        <strong>Warning!</strong> Somthing wrong
+      </ngb-alert>
+    </div>
+
+    <div class="form-group">
+      <label>Social security number</label>
+      <input #ssn="ngModel" required type="text" pattern="[0-9]{11}" class="form-control" name="Pesel" [(ngModel)]="model.pesel" />
+    </div>
+    <div *ngIf="ssn.touched && ssn.invalid">
+      <ngb-alert type="danger" [dismissible]="false">
+        <strong>Warning!</strong> Somthing wrong
+      </ngb-alert>
     </div>
 
     <label>Nationality</label>
@@ -33,6 +61,24 @@
         <strong>Warning!</strong> Somthing wrong
       </ngb-alert>
     </div>
+
+    <label>Work Type</label>
+    <div class="radio">
+      <label for="w1">
+        <input id="w1" type="radio" name="WorkTime" value="Full time" [(ngModel)]="model.isFullTime" checked/> Full time
+      </label>
+    </div>
+    <div class="radio">
+      <label for="w2">
+        <input id="w2" type="radio" name="WorkTime" value="Half time" [(ngModel)]="model.isFullTime" /> Half time
+      </label>
+    </div>
+    <div class="radio">
+      <label for="w3">
+        <input id="w3" type="radio" name="WorkTime" value="Three-quarter time" [(ngModel)]="model.isFullTime" /> Three-quarter time
+      </label>
+    </div>
+
     <br>
     <button (click)="onSubmit()" class="btn btn-success" [disabled]="!form.valid">Submit</button>
     <br>
