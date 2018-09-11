@@ -9,7 +9,7 @@ import { WorkersService } from '../workers.service';
 export class WorkersListComponent implements OnInit {
   workerslist: Worker[];
   constructor(private workersService: WorkersService) { 
-    this.workerslist = this.workersService.getWorkers();
+    this.workersService.getWorkers().subscribe(workers => this.workerslist = workers);
   }
 
   ngOnInit() {

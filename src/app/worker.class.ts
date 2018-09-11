@@ -1,5 +1,5 @@
 export class Worker {
-  workerId: number;
+  _id?: { $oid: string };
   firstName: string;
   lastName: string;
   hireDate: any;

@@ -9,7 +9,7 @@ import { WorkersService } from '../workers.service';
 })
 export class WorkerFormComponent implements OnInit {
   submited: boolean = false;
-  model: Worker = { workerId: this.workersService.getWorkersLength()+1,firstName: "", lastName: "", nationality:"", hireDate: "",phoneNumber: "",pesel:"" , isFullTime: "Full time"};
+  model: Worker = {firstName: "", lastName: "", nationality:"", hireDate: "",phoneNumber: "",pesel:"" , isFullTime: "Full time"};
   nationalities = ["English","Spanish","Polish","German","Other"];
 
   onSubmit(){
@@ -19,7 +19,7 @@ export class WorkerFormComponent implements OnInit {
   }
   addAnother(){
     this.submited = false;
-    this.model = { workerId: this.workersService.getWorkersLength()+1,firstName: "", lastName: "", nationality:"", hireDate: "", phoneNumber: "",pesel: "", isFullTime: "Full time"};
+    this.model = {firstName: "", lastName: "", nationality:"", hireDate: "", phoneNumber: "",pesel: "", isFullTime: "Full time"};
   }
   constructor(private workersService:WorkersService) { 
     console.log("constructor");

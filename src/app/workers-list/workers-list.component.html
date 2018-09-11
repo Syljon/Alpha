@@ -6,7 +6,7 @@
       <th>Nationality</th>
       <tr *ngFor="let worker of workerslist">
         <td>
-          {{ worker.workerId }}
+          {{ worker._id.$oid }}
         </td>
         <td>
           {{ worker.firstName }}
@@ -18,7 +18,7 @@
           {{ worker.nationality }}
         </td>
         <td>
-          <a routerLink="/detail/{{worker.workerId}}">Detail</a>
+          <a routerLink="/detail/{{worker._id.$oid }}">Detail</a>
         </td>
       </tr>
     </table>

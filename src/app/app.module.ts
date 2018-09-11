@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +24,7 @@ import { WorkerDetailComponent } from './worker-detail/worker-detail.component';
     BrowserModule,
     FormsModule,
     NgbModule.forRoot(),
+    HttpClientModule,
     RouterModule.forRoot([
       {path:'welcome', component: WelcomePageComponent},
       {path:'employee-list', component: WorkersListComponent},
