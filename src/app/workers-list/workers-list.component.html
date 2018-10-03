@@ -22,10 +22,10 @@
         {{ worker.phoneNumber }}
       </td>
       <td>
-        <a routerLink="/detail/{{worker._id.$oid }}">Detail</a>
+        <a routerLink="/detail/{{worker._id.$oid }}" class="btn btn-info" >Detail</a>
       </td>
       <td>
-        <button (click)="remove(worker)">Remove</button>
+        <button (click)="remove(worker)" class="btn btn-danger">Remove</button>
       </td>
     </tr>
   </table>
