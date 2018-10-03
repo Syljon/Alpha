@@ -14,7 +14,7 @@ export class WorkerFormComponent implements OnInit {
 
   onSubmit(){
     console.log("Submit", this.model)
-    this.workersService.addWorkers(this.model);
+    this.workersService.postWorkers(this.model);
     this.submited = true;
   }
   addAnother(){
@@ -22,11 +22,8 @@ export class WorkerFormComponent implements OnInit {
     this.model = {firstName: "", lastName: "", nationality:"", hireDate: "", phoneNumber: "",pesel: "", isFullTime: "Full time"};
   }
   constructor(private workersService:WorkersService) { 
-    console.log("constructor");
-    
   }
 
   ngOnInit() {
-    console.log("ngOnInit");
   }
 }

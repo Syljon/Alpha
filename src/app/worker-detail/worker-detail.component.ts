@@ -14,7 +14,9 @@ export class WorkerDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
+  save(){
+    this.workersService.updateWorker(this.employee).subscribe(()=>this.goBack());
+  }
   constructor(
     private route: ActivatedRoute,
     private location: Location,

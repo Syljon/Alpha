@@ -1,25 +1,32 @@
 <div class='container'>
-    <table class="table">
-      <th>ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Nationality</th>
-      <tr *ngFor="let worker of workerslist">
-        <td>
-          {{ worker._id.$oid }}
-        </td>
-        <td>
-          {{ worker.firstName }}
-        </td>
-        <td>
-          {{ worker.lastName }}
-        </td>
-        <td>
-          {{ worker.nationality }}
-        </td>
-        <td>
-          <a routerLink="/detail/{{worker._id.$oid }}">Detail</a>
-        </td>
-      </tr>
-    </table>
-  </div>
+  <label>Filter by Last Name <input type="text" [(ngModel)]="listFilter"></label>
+  <div class="alert alert-primary" role="alert" *ngIf="!workerslist">
+      <h1>Loading List ...</h1>
+    </div>
+  <table class="table"  *ngIf="workerslist">
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Nationality</th>
+    <th>Phone number</th>
+    <tr *ngFor="let worker of filterworkerlist">
+      <td>
+        {{ worker.firstName }}
+      </td>
+      <td>
+        {{ worker.lastName }}
+      </td>
+      <td>
+        {{ worker.nationality }}
+      </td>
+      <td>
+        {{ worker.phoneNumber }}
+      </td>
+      <td>
+        <a routerLink="/detail/{{worker._id.$oid }}">Detail</a>
+      </td>
+      <td>
+        <button (click)="remove(worker)">Remove</button>
+      </td>
+    </tr>
+  </table>
+</div>

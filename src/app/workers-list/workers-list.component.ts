@@ -8,8 +8,26 @@ import { WorkersService } from '../workers.service';
 })
 export class WorkersListComponent implements OnInit {
   workerslist: Worker[];
+  filterworkerlist:Worker[];
+  _listFilter: string;
+  get listFilter(): string{
+    return this._listFilter;
+  }
+  set listFilter(value){
+    this._listFilter = value;
+    this.filterworkerlist =  this.listFilter
+    ? this._Filter(this.listFilter)
+    : this.workerslist;
+  }
+  _Filter(filter: string){
+    filter = filter.toLocaleLowerCase();
+    return this.workerslist.filter((worker: Worker) => {return worker.lastName.toLocaleLowerCase().indexOf(filter) !== -1})
+  }
+  remove(_worker: Worker){
+    this.workersService.removeWorker(_worker).subscribe();
+  }
   constructor(private workersService: WorkersService) { 
-    this.workersService.getWorkers().subscribe(workers => this.workerslist = workers);
+    this.workersService.getWorkers().subscribe(workers => {this.workerslist = workers; this.filterworkerlist = workers});
   }
 
   ngOnInit() {

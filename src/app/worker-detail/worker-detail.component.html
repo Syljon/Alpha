@@ -1,16 +1,18 @@
 <div class='container' *ngIf='employee'>
 
-<h2>Name: {{employee.firstName}}  {{employee.lastName}}</h2>
+    <h2>Name: <input [(ngModel)]="employee.firstName">
+        <input [(ngModel)]="employee.lastName">
+    </h2>
 
-<h5>Employee ID: {{employee.workerId}}</h5>
-<p>
-Hire Date: {{employee.hireDate.day}}-{{employee.hireDate.month}}-{{employee.hireDate.year}}<br>
-Phone number: {{employee.phoneNumber}}<br>
-Social security number: {{employee.pesel}}<br>
-Nationality: {{employee.nationality}}<br>
-Work Time: {{employee.isFullTime}}
+    <h5>Employee ID: {{employee.workerId}}</h5>
+    <p>
+        Hire Date: {{employee.hireDate.day}}-{{employee.hireDate.month}}-{{employee.hireDate.year}}<br>
+        Phone number: {{employee.phoneNumber}}<br>
+        Social security number: {{employee.pesel}}<br>
+        Nationality: {{employee.nationality}}<br>
+        Work Time: {{employee.isFullTime}}
 
-</p>
-
-<button (click)="goBack()">go back</button>
+    </p>
+    <button (click)="save()"> Save</button>
+    <button (click)="goBack()">Back</button>
 </div>

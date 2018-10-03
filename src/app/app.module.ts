@@ -31,7 +31,7 @@ import { WorkerDetailComponent } from './worker-detail/worker-detail.component';
       {path: 'employee-form', component: WorkerFormComponent},
       {path: 'detail/:id', component: WorkerDetailComponent},
       {path:'**',redirectTo:"/welcome",pathMatch: 'full'}
-    ])
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
